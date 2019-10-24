@@ -7,7 +7,7 @@ using TaskDotnetAngular.Models;
 //using TaskSharpHTTP.Models;
 namespace TaskSharpHTTP.Controllers
 {
-[Route("api/[controller]")]
+[Route("api/Task")]
 [ApiController]
 public class TaskController : ControllerBase
 {
@@ -68,8 +68,7 @@ return NoContent();
 [HttpDelete("{id}")]
 public async Task<IActionResult> DeleteTaskItem(int id)
 {
-var TaskItem = await
-_context.TaskItems.FindAsync(id);
+var TaskItem = await _context.TaskItems.FindAsync(id);
 if (TaskItem == null)
 {
 return NotFound();
